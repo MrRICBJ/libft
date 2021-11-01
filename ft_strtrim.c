@@ -6,7 +6,7 @@
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 19:27:49 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/21 21:03:13 by bjanette         ###   ########.fr       */
+/*   Updated: 2021/10/25 18:13:27 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	return (s);
 }
-// int main()
-// {
-// 	char s1[] = "          ";;
-// 	char *s2 = s1 + 20;
-// 	printf ("%s\n", ft_strtrim(s1, " "));
-// 	// printf ("%s", strjoin(s2, s1));
-// }

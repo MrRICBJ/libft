@@ -6,7 +6,7 @@
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:28:55 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/13 19:29:01 by bjanette         ###   ########.fr       */
+/*   Updated: 2021/10/25 18:13:20 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,3 @@ char	*ft_strnstr(const char *b, const char *l, size_t n)
 	}
 	return (0);
 }
-// int main()
-// {
-// const char *largestring = "01234567";
-// const char *smallstring = "j";
-// const char *largestring1 = "01234567";
-// const char *smallstring1 = "j";
-// printf ("off	%s\n", strnstr(largestring, smallstring, 7));
-// printf ("unoff	%s", ft_strnstr(largestring1, smallstring1, 7));
-// }

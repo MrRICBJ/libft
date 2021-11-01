@@ -6,7 +6,7 @@
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:06:38 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/20 18:12:50 by bjanette         ###   ########.fr       */
+/*   Updated: 2021/10/23 21:49:31 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,3 @@ void	ft_putnbr_fd(int n, int fd)
 	else
 		ft_putchar_fd (n + '0', fd);
 }
-// int main()
-// {
-// 	ft_putnbr_fd(2147, 10);
-// }

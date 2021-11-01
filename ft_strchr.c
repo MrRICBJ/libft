@@ -6,7 +6,7 @@
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 18:00:51 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/13 13:35:41 by bjanette         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:16:42 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strchr(const	char *s, int c)
 {
+	char	d;
+
+	d = (char)c;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == d)
 			return (((char *)s));
 		s++;
 	}
-	if (c == '\0')
+	if (d == '\0')
 		return (((char *)s));
 	return (0);
 }

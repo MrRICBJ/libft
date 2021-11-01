@@ -6,7 +6,7 @@
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 16:32:02 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/20 21:19:57 by bjanette         ###   ########.fr       */
+/*   Updated: 2021/10/25 22:00:43 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ static int	ft_num_uk(const char *n, char c)
 		return (0);
 	while (n[a])
 	{
-		if ((n[a] == c) && n[a + 1] && (n[a + 1] != c) && (a != 0) && (c != '\0'))
+		if ((n[a] != c && n[a + 1] == c) \
+		|| (n[a] != c && !n[a + 1]))
 			i++;
 		a++;
 	}
-	if (i == 0 && c != '\0')
-		return (1);
-	// printf("%d\n", i);
 	return (i);
 }
 
@@ -50,10 +48,8 @@ static char	*ft_uk_ww(const char *s, char c)
 	char	*f;
 	int		len;
 	int		i;
-	int		a;
 
 	i = 0;
-	a = 0;
 	if (!s)
 		return (0);
 	len = ft_num_ww(s, c);
@@ -71,12 +67,12 @@ static char	*ft_uk_ww(const char *s, char c)
 	return (f);
 }
 
-static char	ft_cl(char **sr)
+static void	*ft_c(char **sr, int l)
 {
 	int	i;
 
 	i = 0;
-	while (sr[i])
+	while (i < l)
 		free(sr[i++]);
 	free(sr);
 	return (0);
@@ -85,30 +81,24 @@ static char	ft_cl(char **sr)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		l;
 	char	**sr;
 	int		j;
-	int		j1;
 
-	l = ft_num_uk(s, c);
-	j1 = 0;
 	i = 0;
 	j = 0;
 	if (!s)
 		return (0);
-	sr = malloc (sizeof(char *) * (l + 1));
+	sr = (char **)malloc (sizeof(char *) * (ft_num_uk(s, c) + 1));
 	if (!sr)
 		return (0);
-	if (l == 0)
-		return (0);
-	sr[l] = NULL;
-	while (i < l)
+	sr[ft_num_uk(s, c)] = NULL;
+	while (i < ft_num_uk(s, c))
 	{
 		while (s[j] == c)
 			j++;
 		sr[i] = ft_uk_ww(&s[j], c);
-		if (!sr)
-			ft_cl(sr);
+		if (!sr[i])
+			return (ft_c(sr, ft_num_uk(s, c)));
 		while (s[j] != c && s[j])
 			j++;
 		j++;
@@ -116,16 +106,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (sr);
 }
-
-// int main()
-// {
-// 	char *c = "\0aa\0bbb";
-// 	char c1 = '\0';
-// 	char **ar = ft_split(c, c1);
-// 	int i = 0;
-// 	while (ar[i])
-// 	{
-// 		printf("[%s]", ar[i]);
-// 		i++;
-// 	}
-// }

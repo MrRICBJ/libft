@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 20:58:31 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/19 20:20:35 by bjanette         ###   ########.fr       */
+/*   Created: 2021/10/23 16:25:11 by bjanette          #+#    #+#             */
+/*   Updated: 2021/10/23 16:25:12 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (s)
+	if (!s)
+		return ;
+	while (*s)
 	{
-		while (*s)
-		{
-			ft_putchar_fd(*s, fd);
-			s++;
-		}
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
 }

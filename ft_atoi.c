@@ -6,14 +6,11 @@
 /*   By: bjanette <bjanette@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 18:26:12 by bjanette          #+#    #+#             */
-/*   Updated: 2021/10/20 20:00:06 by bjanette         ###   ########.fr       */
+/*   Updated: 2021/10/25 18:08:08 by bjanette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 static int	ft_dyp(int i, int k, const char *s)
 {
